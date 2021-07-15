@@ -1,5 +1,7 @@
 package com.onepage.myapp.video;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,8 +26,13 @@ public class VideoServiceImpl implements VideoService{
 		return videoDAO.updateVideo(vo);
 	}
 	
+//	@Override
+//	public VideoVO getVideo(int playlistID) {
+//		return videoDAO.getVideo(playlistID);
+//	}
+	
 	@Override
-	public VideoVO getVideo(int id) {
-		return videoDAO.getVideo(id);
+	public List<VideoVO> getVideoList(int playlistID) {
+		return videoDAO.getVideoList(playlistID);
 	}
 }

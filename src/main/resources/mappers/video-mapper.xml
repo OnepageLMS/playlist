@@ -6,6 +6,9 @@
 		values
 		(#{youtubeID}, #{start_s}, #{end_s}, #{playlistID})
 	</insert>
-
+	<select id="getVideoList" resultType="video">
+		select * from Video where
+		playlistID=#{playlistID}
+	</select>
 
 </mapper>

@@ -52,6 +52,16 @@
 		</main>
 		
 		
+		<p> show list of videos that are in playlistID == 1 </p>
+		<c:forEach items="${list }" var="u">
+			<c:out value="${u.youtubeID }"/>
+			<div>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/${u.youtubeID}?start=${u.start_s}&end=${u.end_s}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+				</iframe>
+			</div>
+		</c:forEach>
+		
+		
 	</div>
 	
 	<script>
