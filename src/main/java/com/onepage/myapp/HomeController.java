@@ -25,13 +25,13 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model,
-			@RequestParam (required = false, defaultValue = "1") int playlistID
-			) throws Exception {
-		
-		//System.out.println(playlistID);
-		//System.out.println(playlistID.getClass().getName());
-		model.addAttribute("list", videoService.getVideoList(playlistID));
+	public String home(Model model) {
+//			@RequestParam (required = false, defaultValue = "2") int playlistID
+//			) throws Exception {
+//		
+//		//System.out.println(playlistID);
+//		//System.out.println(playlistID.getClass().getName());
+//		model.addAttribute("list", videoService.getVideoList(playlistID));
 		
 		return "home";
 	}
@@ -44,6 +44,19 @@ public class HomeController {
 			System.out.println("데이터 추가 실패 ");
 		else 
 			System.out.println("데이터 추가 성공!! ");
+		return "home";
+	}
+	
+	@RequestMapping(value = "/list", method = RequestMethod.POST)
+	public String list(Model model,
+			@RequestParam (required = false) int playlistID
+			) throws Exception {
+		
+		//System.out.println(playlistID);
+		//System.out.println(playlistID.getClass().getName());
+		
+		model.addAttribute("list", videoService.getVideoList(playlistID));
+		
 		return "home";
 	}
 	

@@ -51,8 +51,13 @@
 			</form>
 		</main>
 		
+		<form action="list" method="post">
+			Choose playlist No: <input type="text" name="playlistID"> 
+			<button type="submit"> submit </button>
+		</form>
 		
-		<p> show list of videos that are in playlistID == 1 </p>
+		<p> show list of videos that are in playlistID == ${list[0].playlistID } </p>
+		
 		<c:forEach items="${list }" var="u">
 			<c:out value="${u.youtubeID }"/>
 			<div>
